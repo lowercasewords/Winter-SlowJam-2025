@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://5wr4qvl7v14g"]
+
+[ext_resource type="PackedScene" uid="uid://2mmec7wvfsb1" path="res://Maps/Objects/Platform.tscn" id="1_cp1ku"]
+[ext_resource type="PackedScene" uid="uid://d4jqomklqtaim" path="res://Player/Player.tscn" id="2_vej1n"]
+
+[node name="Map" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_cp1ku")]
+position = Vector2(559, 490)
+scale = Vector2(3.41, 3.41)
+
+[node name="Player" parent="." instance=ExtResource("2_vej1n")]
+position = Vector2(548, 359)
+
+[node name="Platform2" parent="." instance=ExtResource("1_cp1ku")]
+position = Vector2(372, 412)
+
+[node name="Platform3" parent="." instance=ExtResource("1_cp1ku")]
+position = Vector2(716, 412)

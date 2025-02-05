@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmtml8l2f1x0b"]
+
+[ext_resource type="Texture2D" uid="uid://dgeickotc0iyn" path="res://Player/Rhythm Abilities/rhythm_bar.png" id="1_betwg"]
+[ext_resource type="Script" path="res://Player/Rhythm Abilities/RhythmBar.gd" id="1_pyfff"]
+
+[node name="RhythmBar" type="Node2D"]
+script = ExtResource("1_pyfff")
+metadata/is_left_bar = false
+metadata/tics_until_elapsed = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_betwg")

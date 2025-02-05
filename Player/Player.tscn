@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4jqomklqtaim"]
+
+[ext_resource type="Script" path="res://Player/BasicMovement.gd" id="1_0kvdm"]
+[ext_resource type="PackedScene" uid="uid://cpq5r1xcirse8" path="res://Player/Rhythm Abilities/RhythmAbility.tscn" id="2_qkb88"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1b10f"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_0kvdm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1b10f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Rhythm" parent="CanvasLayer" instance=ExtResource("2_qkb88")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -28.08
+offset_bottom = -28.08
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerView" type="Camera2D" parent="."]
+zoom = Vector2(1.78, 1.78)
