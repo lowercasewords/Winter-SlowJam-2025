@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpq5r1xcirse8"]
+[gd_scene load_steps=4 format=3 uid="uid://cpq5r1xcirse8"]
 
 [ext_resource type="Script" path="res://Player/Rhythm Abilities/RhythmAbility.gd" id="1_lngqo"]
+[ext_resource type="AudioStream" uid="uid://cdvke24jsb642" path="res://Player/Rhythm Abilities/debug_beep.wav" id="2_rk551"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7k2u"]
 size = Vector2(52, 40)
 
 [node name="Rhythm" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_lngqo")
 
 [node name="Background" type="Panel" parent="."]
@@ -16,13 +21,18 @@ offset_left = -217.0
 offset_top = -40.0
 offset_right = 217.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DetectRange" type="Area2D" parent="."]
 position = Vector2(0, -21)
 collision_layer = 16
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRange"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_j7k2u")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="Note" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -21)
+stream = ExtResource("2_rk551")
+
+[connection signal="area_entered" from="DetectRange" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="DetectRange" to="." method="_on_detect_range_area_exited"]

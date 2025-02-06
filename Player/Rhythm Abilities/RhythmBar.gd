@@ -44,10 +44,10 @@ func _process(delta):
 		self.position.x -= bar_speed * delta  # Move left
 
 	# If the bar reaches the middle, remove it
-	if abs(self.position.x - parent_panel_center_x) < 1:
+	if abs(self.position.x - parent_panel_center_x) < 5:
 		queue_free()
 
-	elapse_tic_counter -= 1
+	elapse_tic_counter -= 1 * delta
 
 
 #func _process(delta):
