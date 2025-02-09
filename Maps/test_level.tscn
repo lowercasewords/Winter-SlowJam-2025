@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://5wr4qvl7v14g"]
+[gd_scene load_steps=5 format=3 uid="uid://5wr4qvl7v14g"]
 
 [ext_resource type="PackedScene" uid="uid://2mmec7wvfsb1" path="res://Maps/Objects/Platform.tscn" id="1_cp1ku"]
+[ext_resource type="Script" path="res://Maps/manager.gd" id="1_jpuxv"]
 [ext_resource type="PackedScene" uid="uid://d4jqomklqtaim" path="res://Player/Player.tscn" id="2_vej1n"]
+[ext_resource type="PackedScene" uid="uid://dwkhrrvc8bqv5" path="res://ui/in_game_ui.tscn" id="3_yi5g6"]
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_jpuxv")
 
 [node name="Platform" parent="." instance=ExtResource("1_cp1ku")]
 position = Vector2(559, 490)
@@ -11,6 +14,17 @@ scale = Vector2(3.41, 3.41)
 
 [node name="Player" parent="." instance=ExtResource("2_vej1n")]
 position = Vector2(548, 359)
+
+[node name="inGameMenu" parent="Player" instance=ExtResource("3_yi5g6")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Platform2" parent="." instance=ExtResource("1_cp1ku")]
 position = Vector2(372, 412)

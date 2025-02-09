@@ -1,0 +1,331 @@
+[gd_scene load_steps=5 format=3 uid="uid://da600675jemnf"]
+
+[ext_resource type="Theme" uid="uid://lqrgxsxs2fye" path="res://ui/font and theme/base_theme.tres" id="1_ncjaa"]
+[ext_resource type="Script" path="res://ui/start_ui.gd" id="2_7ewnp"]
+[ext_resource type="FontFile" uid="uid://dfynaome5886n" path="res://ui/font and theme/kongtext.ttf" id="3_7rc7r"]
+[ext_resource type="Script" path="res://ui/Credist.gd" id="18_1xd3a"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_ncjaa")
+script = ExtResource("2_7ewnp")
+
+[node name="StartMenu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -20.0
+offset_right = 23.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="StartMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7rc7r")
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="Settings" type="Button" parent="StartMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7rc7r")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
+[node name="Credits" type="Button" parent="StartMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7rc7r")
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+
+[node name="Quit" type="Button" parent="StartMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7rc7r")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="SettingsMenu" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -90.0
+offset_right = 161.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VolumeLabel" type="RichTextLabel" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_7rc7r")
+text = "Volume
+"
+fit_content = true
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsMenu"]
+layout_mode = 2
+max_value = 1.0
+step = 0.0
+value = 0.5
+
+[node name="MusicLabel" type="RichTextLabel" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_7rc7r")
+text = "Music
+"
+fit_content = true
+
+[node name="MusicSlider" type="HSlider" parent="SettingsMenu"]
+layout_mode = 2
+max_value = 1.0
+step = 0.0
+value = 0.5
+
+[node name="SFXLabel" type="RichTextLabel" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_7rc7r")
+text = "Sound Effects"
+fit_content = true
+
+[node name="SFXSlider" type="HSlider" parent="SettingsMenu"]
+layout_mode = 2
+max_value = 1.0
+step = 0.0
+value = 0.5
+
+[node name="ResolutionLabel" type="RichTextLabel" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_7rc7r")
+text = "Resolution"
+fit_content = true
+
+[node name="Resolution" type="OptionButton" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7rc7r")
+selected = 3
+item_count = 4
+popup/item_0/text = "2560x1440"
+popup/item_1/text = "1920x1080"
+popup/item_1/id = 1
+popup/item_2/text = "1366x768"
+popup/item_2/id = 2
+popup/item_3/text = "1280x720"
+popup/item_3/id = 3
+
+[node name="DisplayLabel" type="RichTextLabel" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_7rc7r")
+text = "Display"
+fit_content = true
+
+[node name="Display" type="OptionButton" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7rc7r")
+selected = 0
+item_count = 4
+popup/item_0/text = "Windowed"
+popup/item_1/text = "Borderless Windowed"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2
+popup/item_3/text = "Borderless Fullscreen"
+popup/item_3/id = 3
+
+[node name="SaveBack" type="Button" parent="SettingsMenu"]
+layout_mode = 2
+theme = ExtResource("1_ncjaa")
+text = "Save and Back"
+
+[node name="AudioStartMenu" type="AudioStreamPlayer" parent="."]
+bus = &"music"
+
+[node name="ClickSFX" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[node name="DiffMenu" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -36.0
+offset_right = 168.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="DiffMenu"]
+layout_mode = 2
+text = "Choose a difficulty"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DiffMenu"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Eazy" type="Button" parent="DiffMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "Easy"
+
+[node name="space2" type="Control" parent="DiffMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Normal" type="Button" parent="DiffMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "Normal"
+
+[node name="space" type="Control" parent="DiffMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Hard" type="Button" parent="DiffMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Hard"
+
+[node name="BackDiff" type="Button" parent="DiffMenu"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Back"
+icon_alignment = 1
+
+[node name="Credist" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -92.0
+offset_right = 587.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_1xd3a")
+
+[node name="ContainerNoodlestrudel" type="HBoxContainer" parent="Credist"]
+visible = false
+clip_contents = true
+layout_mode = 2
+
+[node name="noodlestrudel" type="RichTextLabel" parent="Credist/ContainerNoodlestrudel"]
+layout_mode = 2
+bbcode_enabled = true
+text = "noodlestrudel"
+fit_content = true
+autowrap_mode = 0
+
+[node name="space" type="Control" parent="Credist/ContainerNoodlestrudel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="leadArtist" type="Label" parent="Credist/ContainerNoodlestrudel"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = " Lead Artist"
+horizontal_alignment = 2
+
+[node name="ContainerPalnex" type="HBoxContainer" parent="Credist"]
+layout_mode = 2
+
+[node name="palnex" type="RichTextLabel" parent="Credist/ContainerPalnex"]
+layout_mode = 2
+bbcode_enabled = true
+text = "palnex"
+fit_content = true
+autowrap_mode = 0
+
+[node name="space" type="Control" parent="Credist/ContainerPalnex"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="musicAndUI" type="Label" parent="Credist/ContainerPalnex"]
+layout_mode = 2
+text = "Music and UI"
+
+[node name="ContainerLowercasewords" type="HBoxContainer" parent="Credist"]
+layout_mode = 2
+
+[node name="lowercasewords" type="RichTextLabel" parent="Credist/ContainerLowercasewords"]
+layout_mode = 2
+bbcode_enabled = true
+text = "lowercasewords"
+fit_content = true
+autowrap_mode = 0
+
+[node name="space" type="Control" parent="Credist/ContainerLowercasewords"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AIProgrammer" type="Label" parent="Credist/ContainerLowercasewords"]
+layout_mode = 2
+text = "AI programmer"
+
+[node name="ContainerMrSqueeg" type="HBoxContainer" parent="Credist"]
+visible = false
+layout_mode = 2
+
+[node name="MrSqueeg" type="RichTextLabel" parent="Credist/ContainerMrSqueeg"]
+layout_mode = 2
+bbcode_enabled = true
+text = "MrSqueeg  "
+fit_content = true
+autowrap_mode = 0
+
+[node name="space" type="Control" parent="Credist/ContainerMrSqueeg"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GeneralProgrammer" type="Label" parent="Credist/ContainerMrSqueeg"]
+layout_mode = 2
+text = "General programmer"
+
+[node name="ContainerBackCreds" type="HBoxContainer" parent="Credist"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BackCreds" type="Button" parent="Credist/ContainerBackCreds"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Back"
+
+[connection signal="pressed" from="StartMenu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="StartMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="StartMenu/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="StartMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="SettingsMenu/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="item_selected" from="SettingsMenu/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="item_selected" from="SettingsMenu/Display" to="." method="_on_display_item_selected"]
+[connection signal="pressed" from="SettingsMenu/SaveBack" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="DiffMenu/HBoxContainer/Eazy" to="." method="_on_eazy_pressed"]
+[connection signal="pressed" from="DiffMenu/HBoxContainer/Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="DiffMenu/HBoxContainer/Hard" to="." method="_on_difficult_pressed"]
+[connection signal="pressed" from="DiffMenu/BackDiff" to="." method="_on_back_diff_pressed"]
+[connection signal="pressed" from="Credist/ContainerBackCreds/BackCreds" to="." method="_on_back_creds_pressed"]
